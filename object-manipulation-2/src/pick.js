@@ -1,17 +1,20 @@
 /* exported pick */
+
 /*
 -Assign an empty curly brace to variable newObj
--create a for variable key in source loop
-  if key is strictly equal to keys
-  push key into newObj
-return newObj
+-create a for key in source loop
+  if keys includes keys and source at key isn't undefined
+  newObj at key equals source at key
+-return newObj
 */
+
 function pick(source, keys) {
   // debugger;
-  var newObj = {};
+  const newObj = {};
   for (const key in source) {
-    if (keys.includes(key)) {
-      newObj = key;
+    if (keys.includes(key) &&
+      source[key] !== undefined) {
+      newObj[key] = source[key];
     }
   }
   return newObj;
