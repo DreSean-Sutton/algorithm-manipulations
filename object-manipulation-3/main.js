@@ -80,7 +80,6 @@ console.log(shuffleNServe(players[0], players[1], players[2], players[3]));
 
 function shuffleNServe(competitor1, competitor2, competitor3, competitor4) {
   var shuffledDeck = _.shuffle(deck);
-  var tiebreaker = [];
   competitor1.hand.push(shuffledDeck[0].rank + shuffledDeck[1].rank);
   competitor2.hand.push(shuffledDeck[2].rank + shuffledDeck[3].rank);
   competitor3.hand.push(shuffledDeck[4].rank + shuffledDeck[5].rank);
@@ -90,13 +89,6 @@ function shuffleNServe(competitor1, competitor2, competitor3, competitor4) {
   for (let j = 0; j < players.length; j++) {
     if (players[j].hand === playerPoints[3]) {
       return console.log(players[j].name + ' wins with ' + playerPoints[3] + ' points!');
-      // tiebreaker.push(players[j]);
     }
-    // if (tiebreaker.length > 0) {
-    //   for (let k = 0; k < tiebreaker.length; k++) {
-    //   }
-    //   shuffleNServe(tiebreaker);
-    // }
-    // return tiebreaker;
   }
 }
