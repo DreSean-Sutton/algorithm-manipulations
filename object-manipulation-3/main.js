@@ -76,7 +76,7 @@ for (let i = 0; i < cardArr.length; i++) {
   deck.push(hearts, spades, diamonds, clubs);
 }
 
-console.log(shuffleNServe(players[0], players[1], players[2], players[3]));
+shuffleNServe(players[0], players[1], players[2], players[3]);
 
 function shuffleNServe(competitor1, competitor2, competitor3, competitor4) {
   var shuffledDeck = _.shuffle(deck);
